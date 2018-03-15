@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d138bf8f01381084a8a4396e061d35af
+timeCreated: 1521120029
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Doujinshi
+  fontNames:
+  - Doujinshi
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
