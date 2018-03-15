@@ -8,10 +8,10 @@ public class CreditScript : MonoBehaviour {
 
     public void ShowCredit()//Mostra il pannello dei crediti
     {
-        creditpanel.transform.position= new Vector3(360, 540, 0);
+        creditpanel.transform.position= new Vector3(550, 980, 0);
     }
     public void HideCredit()//Nasconde il pannello dei crediti
     {
-        creditpanel.transform.position = new Vector3(-750, 0, 0);
+        creditpanel.transform.position = new Vector3(-650, 0, 0);
     }
 }
