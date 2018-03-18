@@ -1,0 +1,21 @@
+OldManScript
+-Se tappati, eseguire lo spostamento verso il cantiere, far partire l'animazione, aumentare il punteggio
+-Dopo un certo periodo, far partire un animazione di dialogo per il singolo vecchietto.
+
+WorkerScript
+- Far partire l'animazione per far parlare il cantiere
+- Effettuare il cambio con un animazione dei livelli
+
+ServiceScript
+- Fare in modo che il bottone non si veda se ci sono piu di due vecchietti.
+- Fare in modo che se viene cliccato il bottone, parta la pubblicita, e dopo di essa si aggiungano 10 vecchietti.
+
+ManagerScript:
+- Salvare la variabile "language" che viene selezionata nel titolo del gioco
+- Creare quattro array(due per gli operai e due per i vecchietti), dove inserire le frasi da dire(occhio alla variabile language, al massimo la porto poi in OldManScript e WorkerScript)
+
+
+...-----Studiare un modo per salvare senza usare file(noioso e poco efficente)
+
+
+- Caricare le corrette immagini(quando disponibili)

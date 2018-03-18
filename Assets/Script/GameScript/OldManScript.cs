@@ -14,6 +14,8 @@ public class OldManScript : MonoBehaviour {
     public Boundary boundary;
     Sprite startImage;
     public Sprite manleft, manup, manright, mandown;
+    public Text score;
+
     // Use this for initialization
     void Start () {
         startImage = GetComponent<Sprite>();
@@ -22,8 +24,12 @@ public class OldManScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            //SPOSTA TIPO VERSO CANTIERE, Fai partire animazione, e successivamente aumenta lo score;
+        }
     }
+
     void Move()
     {
 //        int rand = 1; PROVA SOLO AD ANDARE A SINISTRA.
