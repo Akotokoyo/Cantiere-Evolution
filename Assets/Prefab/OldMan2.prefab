@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4178085082887226}
   - component: {fileID: 212810167227996490}
   - component: {fileID: 114319048842495154}
-  - component: {fileID: 54003572698706544}
+  - component: {fileID: 65849242231213198}
+  - component: {fileID: 54283368695170612}
   m_Layer: 0
   m_Name: OldMan2
   m_TagString: Untagged
@@ -42,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54003572698706544
+--- !u!54 &54283368695170612
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -57,6 +58,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65849242231213198
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786238041800246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114319048842495154
 MonoBehaviour:
   m_ObjectHideFlags: 1

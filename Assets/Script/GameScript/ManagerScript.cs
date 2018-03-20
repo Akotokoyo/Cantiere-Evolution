@@ -84,48 +84,21 @@ public class ManagerScript : MonoBehaviour {
             if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
-                if (Physics.Raycast(ray)) { 
-                    Debug.Log("TUTTO REGOLARE"); finalscore.text = "" + attualscore;
-                attualscore++;
+                RaycastHit hit = new RaycastHit();
+                if (Physics.Raycast(ray.origin, ray.direction, out hit)) {
+                    if(hit.transform.tag=="Worker") { 
+                        Debug.Log("Worker Touch");
+                        finalscore.text = "" + attualscore;
+                        attualscore++;
+                    }
+                    else
+                    {
+                        Debug.Log("Other Touch");
+                    }
                 }
             }
             ++i;
         }
-
-
-
-
-
-        /*
-         *  
-         * 
-         * 
-        //Se clicchi, parte animazione di dialogo
-        //        if (Input.GetButton("Fire1") && Time.time > nexttouch)
-        if(Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D raycastHit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (raycastHit.collider.gameObject.name == "Worker")
-                //if (raycastHit.collider != null && raycastHit.collider.tag == "Worker")
-            {
-                nexttouch = Time.time + 1.5f;
-                    Debug.Log("Worker Touched");
-                finalscore.text = ""+attualscore;
-                attualscore++;
-                }
-                else if(raycastHit.collider == null)
-                {
-                    Debug.Log("NULLO");
-                }
-            else
-            {
-                Debug.Log("Altro");
-            }
-
-
-        }
-    */
 
         //Se punteggio raggiunge l'obiettivo, fai partire animazione
         if (attualscore > level[levelindex])
