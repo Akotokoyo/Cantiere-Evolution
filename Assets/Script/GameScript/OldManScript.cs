@@ -14,7 +14,7 @@ public class OldManScript : MonoBehaviour {
     public Boundary boundary;
     Sprite startImage;
     public Sprite manleft, manup, manright, mandown;
-    public Text score;
+
 
     // Use this for initialization
     void Start () {

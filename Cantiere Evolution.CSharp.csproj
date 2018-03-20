@@ -318,10 +318,12 @@
     <Compile Include="Assets\Script\GameScript\buttonScript.cs" />
     <Compile Include="Assets\Script\GameScript\ManagerScript.cs" />
     <Compile Include="Assets\Script\GameScript\OldManScript.cs" />
-    <Compile Include="Assets\Script\GameScript\WorkerScript.cs" />
     <Compile Include="Assets\Script\TitleSceneScript\CreditScript.cs" />
     <Compile Include="Assets\Script\TitleSceneScript\LanguageScript.cs" />
     <Compile Include="Assets\Script\TitleSceneScript\PlayScript.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Cose da fare.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

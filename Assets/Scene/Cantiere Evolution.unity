@@ -504,13 +504,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355b1e1ddce6d3e4c812d5f40dfcbb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oldman1: {fileID: 1336141822506216, guid: 4b6db1b80f9469f43a9859abf2af38ba, type: 2}
+  oldman1: {fileID: 1760846716428476, guid: 4b6db1b80f9469f43a9859abf2af38ba, type: 2}
   oldman2: {fileID: 1786238041800246, guid: 8f2fcbe04c0ae7d48ad581d6a201fa1d, type: 2}
-  oldmancont: 10
   spawnWait: 10
   startWait: 0
-  scoreText: {fileID: 0}
-  finalText: {fileID: 0}
+  oldManLimit: 10
+  nexttouch: 1
+  finalscore: {fileID: 524681205}
 --- !u!82 &1222947987
 AudioSource:
   m_ObjectHideFlags: 0
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 1886216616}
   m_Layer: 0
   m_Name: Worker
-  m_TagString: Untagged
+  m_TagString: Worker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -974,28 +974,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146db9562368de54899e4038bea3fe05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextTouch: 1
-  testoProva: {fileID: 524681205}
---- !u!50 &1886216616
-Rigidbody2D:
-  serializedVersion: 4
+  nexttouch: 0
+  finalscore: {fileID: 524681205}
+  attualscore: 0
+  level: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  levelindex: 0
+--- !u!65 &1886216616
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1886216612}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.07, y: 3.5, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1939503887
 GameObject:
   m_ObjectHideFlags: 0
