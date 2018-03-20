@@ -897,7 +897,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1886216613}
   - component: {fileID: 1886216614}
-  - component: {fileID: 1886216615}
   - component: {fileID: 1886216616}
   m_Layer: 0
   m_Name: Worker
@@ -963,22 +962,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!114 &1886216615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1886216612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146db9562368de54899e4038bea3fe05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nexttouch: 0
-  finalscore: {fileID: 524681205}
-  attualscore: 0
-  level: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  levelindex: 0
 --- !u!65 &1886216616
 BoxCollider:
   m_ObjectHideFlags: 0

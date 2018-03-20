@@ -8,6 +8,7 @@ public class LanguageScript : MonoBehaviour {
     public Image english;
     public Image italian;
     public Text Testo;
+    public string sendlanguage;
 
     public void Start()
     {
@@ -26,12 +27,14 @@ public class LanguageScript : MonoBehaviour {
                 english.color = new Color(255,255,255,0.5f);
                 italian.color = new Color(255, 255, 255, 1);
                 Testo.text = "Tap to Play";
+                sendlanguage = "English";
         }
         else
             {
                 italian.color = new Color(255, 255, 255, 0.5f);
                 english.color = new Color(255, 255, 255, 1);
                 Testo.text = "Premi Per Giocare";
+                sendlanguage = "Italian";
         }
     }
 }

@@ -11,8 +11,7 @@ ServiceScript
 - Fare in modo che se viene cliccato il bottone, parta la pubblicita, e dopo di essa si aggiungano 10 vecchietti.
 
 ManagerScript:
-- Salvare la variabile "language" che viene selezionata nel titolo del gioco
-- Creare quattro array(due per gli operai e due per i vecchietti), dove inserire le frasi da dire(occhio alla variabile language, al massimo la porto poi in OldManScript e WorkerScript)
+- Settare il controllo della lingua per far dialogare Worker e OldMan
 
 
 ...-----Studiare un modo per salvare senza usare file(noioso e poco efficente)
