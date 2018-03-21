@@ -3,7 +3,6 @@ OldManScript
 -Dopo un certo periodo, far partire un animazione di dialogo per il singolo vecchietto.
 
 WorkerScript
-- Far partire l'animazione per far parlare il cantiere
 - Effettuare il cambio con un animazione dei livelli
 
 ServiceScript
