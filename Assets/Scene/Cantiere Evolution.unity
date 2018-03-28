@@ -618,10 +618,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oldman1: {fileID: 1760846716428476, guid: 4b6db1b80f9469f43a9859abf2af38ba, type: 2}
   oldman2: {fileID: 1786238041800246, guid: 8f2fcbe04c0ae7d48ad581d6a201fa1d, type: 2}
-  spawnWait: 10
+  spawnWait: 2
   startWait: 0
   spotButton: {fileID: 1863310759}
   oldManLimit: 10
+  manCont: 0
   finalscore: {fileID: 524681205}
   nextTouch: 0
   workerDialogueButton: {fileID: 460974908}
@@ -993,7 +994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b468b0452b7cc4e8afcf8c5c59628f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testo: {fileID: 0}
+  oldman1: {fileID: 1760846716428476, guid: 4b6db1b80f9469f43a9859abf2af38ba, type: 2}
+  oldman2: {fileID: 1786238041800246, guid: 8f2fcbe04c0ae7d48ad581d6a201fa1d, type: 2}
 --- !u!114 &1863310762
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,7 @@ public class ManagerScript : MonoBehaviour {
     public GameObject spotButton;
 
     public int oldManLimit;
-    private int manCont;
+    public int manCont;
 
     //GESTIONE SCORE
     public Text finalscore;
@@ -40,11 +41,11 @@ public class ManagerScript : MonoBehaviour {
 
     void Start()
     {
-        //GESTIONE NUMERO VECCHIETTI
+        //Control the number of the oldMan
         manCont = 0;
         oldmantype = false;
 
-        //LISTA LIVELLI
+        //Level List
         level[0] = 30;
         level[1] = 60;
         level[2] = 100;
@@ -58,33 +59,29 @@ public class ManagerScript : MonoBehaviour {
         levelindex = 0;
         attualscore = 0;
 
-        StartCoroutine(SpawnWaves());
+        InvokeRepeating("SpawnWaves", 0.0f, 10.0f);
 
-        //LANGUAGE FROM ANOTHER SCRIPT, English or Italian
+        //Language from another Script(exactly PlayScript), English or Italian
         //lang = PlayerPrefs.GetString("Language");     COMMENTO SOLO PER PROVARE INGLESE
         lang = "English";
     }
 
-    IEnumerator SpawnWaves()
-    {
-        yield return new WaitForSeconds(startWait);
-        if(true)
-        {
-            for (int i = 0; i < oldManLimit; i++)
-            {
-                Vector3 spawnPosition = new Vector3(Random.Range(-1.5f, 1.5f), Random.Range(-3, 0), -1);
-                Quaternion spawnRotation = Quaternion.identity;
 
+    void SpawnWaves()
+    {
+        //Control The Spawn of the OldMan
+        if(manCont<oldManLimit)
+        {
+            Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-1.5f, 1.5f), UnityEngine.Random.Range(-3, 0), -1);
+            Quaternion spawnRotation = Quaternion.identity;
             //What type of oldman will spawn
             if (oldmantype) {
-//                Debug.Log("uno");
                 Instantiate(oldman1, spawnPosition, spawnRotation);
                 oldmantype = false;
                 manCont++;
             }
             else if(!oldmantype)
             {
-//                Debug.Log("due");
                 Instantiate(oldman2, spawnPosition, spawnRotation);
                 oldmantype = true;
                 manCont++;
@@ -99,14 +96,13 @@ public class ManagerScript : MonoBehaviour {
             {
                 spotButton.gameObject.SetActive(false);
             }
-            yield return new WaitForSeconds(spawnWait);
-            }
-        }
+       }
+        
     }
 
     IEnumerator ShowMessageWorker(float delay)
     {
-        int rand = Random.Range(0,10);
+        int rand = UnityEngine.Random.Range(0,10);
         workerDialogueButton.gameObject.SetActive(true);
         if (lang == "English") { 
             workerDialogueText.text = englishWorkerDialogue[rand];
@@ -122,7 +118,7 @@ public class ManagerScript : MonoBehaviour {
 
     void Update()
     {
-    //GESTIONE DEL TOUCH
+    //Touch behavior
         int i = 0;
         while (i < Input.touchCount)
         {
@@ -146,7 +142,7 @@ public class ManagerScript : MonoBehaviour {
             ++i;
         }
 
-        //Se punteggio raggiunge l'obiettivo, fai partire animazione
+        //IF SCORE ARRIVE TO THE OBJECTIVE, STAR ANIMATION
         if (attualscore > level[levelindex])
         {
             attualscore = 0;

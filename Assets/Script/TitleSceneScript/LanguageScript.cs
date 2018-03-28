@@ -18,11 +18,11 @@ public class LanguageScript : MonoBehaviour {
     }
 
     public void onclick(bool lan)
-        //I Bottoni con le lingue, sono settati in modo che se lan(language) è:
-        //TRUE La lingua settata è l'INGLESE
-        //FALSE La lingua settata è l'ITALIANO
-        {
-            if (lan)
+    //Buttons for the language, the variable lan is:
+    //TRUE For ENGLISH language
+    //FALSE For ITALIAN language
+    {
+        if (lan)
             {
                 english.color = new Color(255,255,255,0.5f);
                 italian.color = new Color(255, 255, 255, 1);
