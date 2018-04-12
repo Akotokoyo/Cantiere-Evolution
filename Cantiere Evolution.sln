@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cantiere Evolution.CSharp", "Cantiere Evolution.CSharp.csproj", "{66AEA46D-A8AC-566E-7F4D-9698F4425248}"
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cantiere Evolution", "Cantiere Evolution.csproj", "{13D6C518-4492-5EC2-7201-3DF129A8A88F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{66AEA46D-A8AC-566E-7F4D-9698F4425248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66AEA46D-A8AC-566E-7F4D-9698F4425248}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66AEA46D-A8AC-566E-7F4D-9698F4425248}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66AEA46D-A8AC-566E-7F4D-9698F4425248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13D6C518-4492-5EC2-7201-3DF129A8A88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D6C518-4492-5EC2-7201-3DF129A8A88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D6C518-4492-5EC2-7201-3DF129A8A88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13D6C518-4492-5EC2-7201-3DF129A8A88F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

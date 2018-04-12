@@ -1,16 +1,9 @@
 NEW
-buttonScript
-- Far partire la pubblicita
-
-OldManScript
-- Se tappato, farlo spostare verso il cantiere, far partire l'animazione, poi distruggilo.
-
 ManagerScript
-- Invoke, dopo tot tempo, un vecchietto a caso, dice una frase e segue il movimento.
 - Effettuare il cambio con un animazione dei livelli
 
--Se tappati, eseguire lo spostamento verso il cantiere, far partire l'animazione, aumentare il punteggio
-
+GAMEOBJECT
+- vignetta per i vecchietti(inizializzate disabled, successivamente farci una funzione che ogni tot si mosti e dica qualcosa)
 
 ...-----Studiare un modo per salvare senza usare file(noioso e poco efficente)
 

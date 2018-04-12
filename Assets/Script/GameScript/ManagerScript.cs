@@ -19,6 +19,7 @@ public class ManagerScript : MonoBehaviour {
     //GESTIONE SCORE
     public Text finalscore;
     private int attualscore;
+    private bool finish;
 
     private int[] level = new int[10];
     private int levelindex;
@@ -26,6 +27,9 @@ public class ManagerScript : MonoBehaviour {
     //VARIABILI INERENTI AL TOUCH
     RaycastHit hit;
     public float nextTouch;
+
+
+
 
     //VARIABILE DI LINGUAGGIO
     private string lang;
@@ -44,6 +48,7 @@ public class ManagerScript : MonoBehaviour {
         //Control the number of the oldMan
         manCont = 0;
         oldmantype = false;
+        finish = false;
 
         //Level List
         level[0] = 30;
@@ -59,11 +64,11 @@ public class ManagerScript : MonoBehaviour {
         levelindex = 0;
         attualscore = 0;
 
-        InvokeRepeating("SpawnWaves", 0.0f, 10.0f);
+        InvokeRepeating("SpawnWaves", 0.0f, 1.0f);
 
         //Language from another Script(exactly PlayScript), English or Italian
-        //lang = PlayerPrefs.GetString("Language");     COMMENTO SOLO PER PROVARE INGLESE
-        lang = "English";
+        lang = PlayerPrefs.GetString("Language");
+        //lang = "English"; COMMENTO SOLO PER PROVARE INGLESE
     }
 
 
@@ -86,7 +91,6 @@ public class ManagerScript : MonoBehaviour {
                 oldmantype = true;
                 manCont++;
             }
-
             //Show and hide Spot Button
             if (manCont <= 2)
             {
@@ -118,8 +122,10 @@ public class ManagerScript : MonoBehaviour {
 
     void Update()
     {
+
     //Touch behavior
         int i = 0;
+        Debug.Log(manCont);
         while (i < Input.touchCount)
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began && Time.time > nextTouch)
@@ -127,27 +133,60 @@ public class ManagerScript : MonoBehaviour {
                 nextTouch = Time.time + 6.0f;
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
                 RaycastHit hit = new RaycastHit();
-                if (Physics.Raycast(ray.origin, ray.direction, out hit)) {
-                    if(hit.transform.tag=="Worker") {
-                        StartCoroutine(ShowMessageWorker(5.5f));
-//                        finalscore.text = "" + attualscore;
-//                        attualscore++;
-                    }
-                    else
+                if (Physics.Raycast(ray.origin, ray.direction, out hit))
+                {
+                    if (hit.transform.tag == "Worker")
                     {
-                        Debug.Log("Other Touch");
+                        StartCoroutine(ShowMessageWorker(5.5f));
                     }
+                    else{}
+                }
+            }
+
+            //behavior about the change of score and number of OldMan
+            else if (Input.GetTouch(i).phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+                RaycastHit hit = new RaycastHit();
+                if (Physics.Raycast(ray.origin, ray.direction, out hit))
+                {
+                    if (hit.transform.tag != "Worker")
+                    {
+                        finalscore.text = "" + attualscore;
+                        manCont = manCont - 1;
+                        if (!finish)
+                        {
+                            attualscore += 3;
+                        }
+                        else
+                        {
+                            attualscore += 5;
+                        }
+                    }
+
                 }
             }
             ++i;
         }
-
-        //IF SCORE ARRIVE TO THE OBJECTIVE, STAR ANIMATION
-        if (attualscore > level[levelindex])
+            //If accidently manCont is minus than zero, set to zero
+            if (manCont < 0)
+                {
+                    manCont = 0;
+                }
+            //IF SCORE ARRIVE TO THE OBJECTIVE, START ANIMATION
+            if (attualscore > level[levelindex])
         {
-            attualscore = 0;
-            finalscore.text = (attualscore + "/" + level[levelindex]);
-            levelindex++;
+            if (levelindex == 12) {
+                levelindex = 0;
+                attualscore = 0;
+                finish = true;
+            }
+            else { 
+                attualscore = 0;
+                finalscore.text = (attualscore + "/" + level[levelindex]);
+                levelindex++;
+            }
+            
         }
         else
         {

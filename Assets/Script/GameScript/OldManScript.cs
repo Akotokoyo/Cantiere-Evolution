@@ -15,18 +15,57 @@ public class OldManScript : MonoBehaviour {
     Sprite startImage;
     public Sprite manleft, manup, manright, mandown;
 
+    //VARIABILI INERENTI AL TOUCH
+    RaycastHit hit;
+
+    //VARIABILI PER FAR MUOVERE IL VECCHIETTO
+    private GameObject target;
+    private float smoothTime = 0.5F;
+    private Vector3 velocity = Vector3.zero;
+    private bool startMove;
+
+
 
     // Use this for initialization
     void Start () {
         startImage = GetComponent<Sprite>();
         InvokeRepeating("Move", 3.0f, 1.0f);
+
+        target = GameObject.Find("Worker");
+        startMove = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+
+    // Update is called once per frame
+    void Update () {
+
+        //SPOSTA TIPO VERSO CANTIERE, Fai partire animazione, e successivamente aumenta lo score;
+        int i = 0;
+        while (i < Input.touchCount)
         {
-            //SPOSTA TIPO VERSO CANTIERE, Fai partire animazione, e successivamente aumenta lo score;
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+                RaycastHit hit = new RaycastHit();
+                if (Physics.Raycast(ray.origin, ray.direction, out hit) && hit.collider.gameObject.Equals(this.gameObject)) {
+                    startMove = true;
+                }
+            }
+            ++i;
+        }
+        //if oldman touched, move object to worker, and disappear
+        if (startMove)
+        {
+ 
+            Vector3 targetPosition = target.transform.TransformPoint(new Vector3(0, 0, 0));
+            this.transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+//            Debug.Log("OLDMAN TOUCHED");
+            if (this.transform.position.x <= 0.5f && this.transform.position.y >= 1.5f)
+            {
+                startMove = false;
+//                Debug.Log("ARRIVE");
+                Destroy(gameObject);
+            }
+
         }
     }
 

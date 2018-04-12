@@ -616,8 +616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355b1e1ddce6d3e4c812d5f40dfcbb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oldman1: {fileID: 1760846716428476, guid: 4b6db1b80f9469f43a9859abf2af38ba, type: 2}
-  oldman2: {fileID: 1786238041800246, guid: 8f2fcbe04c0ae7d48ad581d6a201fa1d, type: 2}
+  oldman1: {fileID: 1813022318873960, guid: 4b6db1b80f9469f43a9859abf2af38ba, type: 2}
+  oldman2: {fileID: 1795224179882056, guid: 8f2fcbe04c0ae7d48ad581d6a201fa1d, type: 2}
   spawnWait: 2
   startWait: 0
   spotButton: {fileID: 1863310759}
